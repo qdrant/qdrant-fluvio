@@ -1,0 +1,12 @@
+apiVersion: 0.1.0
+meta:
+  version: 0.1.0
+  name: my-qdrant-connector
+  type: qdrant-sink
+  topic: test-qdrant-connector-topic
+  secrets:
+    - name: QDRANT_API_KEY
+
+qdrant:
+  url: http://localhost:6334
+  api_key: "${{ secrets.QDRANT_API_KEY }}"

@@ -1,0 +1,19 @@
+[package]
+name = "qdrant-sink"
+version = "0.1.0"
+authors = ["Qdrant Team <info@qdrant.com>"]
+edition = "2021"
+
+[workspace]
+
+[dependencies]
+futures = { version = "0.3", default-features = false }
+serde = { version = "1.0", default-features = false, features = ["derive"]}
+
+fluvio = { git = "https://github.com/infinyon/fluvio", rev = "790b7fda77785099cd63915a7b26d16249f1eb8c" }
+fluvio-connector-common = { git = "https://github.com/infinyon/fluvio", rev = "790b7fda77785099cd63915a7b26d16249f1eb8c", features = ["derive"] }
+serde_json = "1.0.125"
+anyhow = "1"
+async-trait = "0.1.81"
+qdrant-client = "1.11.1"
+async-std = { version = "1", features = ["attributes", "tokio1"] }

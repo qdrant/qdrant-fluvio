@@ -1,0 +1,29 @@
+[package]
+name = "qdrant-sink"
+group = "qdrant"
+version = "0.1.0"
+apiVersion = "0.1.0"
+fluvio = "0.10.0"
+description = "Connector to stream records from Fluvio topics to a Qdrant collection."
+license = "Apache-2.0"
+visibility = "public"
+
+[direction]
+ dest = true 
+
+[deployment]
+binary = "qdrant-sink"
+
+[custom]
+name = "qdrant"
+required = ["url"]
+
+[custom.properties.url]
+title = "Qdrant URL"
+description = "gRPC URL of Qdrant"
+type = "string"
+
+[custom.properties.api_key]
+title = "API Key"
+description = "API Key for Qdrant"
+type = "string"

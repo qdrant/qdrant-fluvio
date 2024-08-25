@@ -1,0 +1,15 @@
+{
+    "collection_name": "fluvio",
+    "id": "f0ed0746-c140-4014-9dee-75f906cd0ad9",
+    "vectors": {
+        "sparse": {
+            "indices": [432, 5235, 523532],
+            "values": [0.5235, 0.2423, 0.3]
+        },
+        "multi": [[0.5235, 0.2, 0.3, 0.325]],
+        "dense": [0.5235, 0.2, 0.3, 0.325]
+    },
+    "payload": {
+        "some_key": false
+    }
+}
