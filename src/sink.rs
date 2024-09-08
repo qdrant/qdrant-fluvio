@@ -39,21 +39,26 @@ impl Sink<Record> for QdrantSink {
                 Ok(value) => value,
                 Err(e) => {
                     tracing::error!("Failed to parse record value: {}", e);
-                    return Err::<Qdrant, anyhow::Error>(e.into());
+                    return Ok::<Qdrant, anyhow::Error>(client);
                 }
             };
 
-            let (collection_name, point) = value_to_point(&value)?;
+            let (collection_name, point) = match value_to_point(&value) {
+                Ok((collection_name, point)) => (collection_name, point),
+                Err(err) => {
+                    tracing::error!("Failed to convert value to point: {:?}", err);
+                    return Ok::<Qdrant, anyhow::Error>(client);
+                }
+            };
+
             let response = client
                 .upsert_points(UpsertPointsBuilder::new(collection_name, vec![point]).wait(true))
-                .await?;
+                .await;
 
-            if let Some(result) = response.result {
-                tracing::info!("Upsert status: {:?}", result);
-            } else {
-                return Err::<Qdrant, anyhow::Error>(anyhow::anyhow!("Failed to upsert point"));
+            match response {
+                Ok(result) => tracing::info!("Upsert status: {:?}", result),
+                Err(err) => tracing::error!("Failed to upsert point: {:?}", err),
             }
-
             Ok::<Qdrant, anyhow::Error>(client)
         });
 
