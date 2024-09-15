@@ -64,7 +64,7 @@ Reference: [Creating a collection with a default vector](https://qdrant.tech/doc
 {
     "collection_name": "{collection_name}",
     "id": 1,
-    "vector": [
+    "vectors": [
         0.1,
         0.2,
         0.3,
@@ -93,7 +93,7 @@ Reference: [Creating a collection with multiple vectors](https://qdrant.tech/doc
 {
     "collection_name": "{collection_name}",
     "id": 1,
-    "vector": {
+    "vectors": {
         "some-dense": [
             0.1,
             0.2,
@@ -134,7 +134,7 @@ Reference: [Creating a collection with sparse vectors](https://qdrant.tech/docum
 {
     "collection_name": "{collection_name}",
     "id": 1,
-    "vector": {
+    "vectors": {
         "some-sparse": {
             "indices": [
                 0,
@@ -179,7 +179,7 @@ Reference: [Creating a collection with sparse vectors](https://qdrant.tech/docum
 {
     "collection_name": "{collection_name}",
     "id": 1,
-    "vector": {
+    "vectors": {
         "some-multi": [
             [
                 0.1,
@@ -230,7 +230,7 @@ Reference:
 {
     "collection_name": "{collection_name}",
     "id": "a10435b5-2a58-427a-a3a0-a5d845b147b7",
-    "vector": {
+    "vectors": {
         "some-other-dense": [
             0.1,
             0.2,
