@@ -1,15 +1,15 @@
 [package]
 name = "qdrant-sink"
 group = "qdrant"
-version = "0.1.0"
+version = "0.1.1"
 apiVersion = "0.1.0"
-fluvio = "0.10.0"
+fluvio = "0.12.0"
 description = "Connector to stream records from Fluvio topics to a Qdrant collection."
 license = "Apache-2.0"
 visibility = "public"
 
 [direction]
- dest = true 
+ dest = true
 
 [deployment]
 binary = "qdrant-sink"
