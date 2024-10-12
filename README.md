@@ -17,7 +17,7 @@ cdk hub download qdrant/qdrant-sink@0.1.0
 ```yaml
 apiVersion: 0.1.0
 meta:
-  version: 0.1.0
+  version: 0.1.1
   name: my-qdrant-connector
   type: qdrant-sink
   topic: some-topic
