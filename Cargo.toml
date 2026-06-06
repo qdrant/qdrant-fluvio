@@ -12,11 +12,11 @@ serde = { version = "1.0", default-features = false, features = ["derive"]}
 
 fluvio = { git = "https://github.com/infinyon/fluvio", tag = "v0.12.0" }
 fluvio-connector-common = { git = "https://github.com/infinyon/fluvio", tag = "v0.12.0", features = ["derive"] }
-serde_json = "1.0.125"
+serde_json = "1.0.150"
 anyhow = "1"
-async-trait = "0.1.81"
-qdrant-client = "1.11.1"
+async-trait = "0.1.89"
+qdrant-client = "1.12.0"
 async-std = { version = "1", features = ["attributes", "tokio1"] }
 
 # transitive dependency selection (resolve conflict in ver selection among deps)
-bytes = { version = "1.7.2" }
+bytes = { version = "1.11.1" }
