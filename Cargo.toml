@@ -19,4 +19,4 @@ qdrant-client = "1.11.1"
 async-std = { version = "1", features = ["attributes", "tokio1"] }
 
 # transitive dependency selection (resolve conflict in ver selection among deps)
-bytes = { version = "1.7.2" }
+bytes = { version = "1.11.1" }
